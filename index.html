@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Peu, estrategista criativo especializado em cultura pop, conteúdo viral e grandes audiências.">
+  <title>Peu | Estratégia Criativa e Cultura Pop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=lab-polish-1">
+</head>
+<body>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+  <canvas class="signal-canvas" id="signal-canvas" aria-hidden="true"></canvas>
+  <div class="cursor-light" id="cursor-light" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <svg class="icon-sprite" aria-hidden="true" focusable="false">
+    <symbol id="icon-mail" viewBox="0 0 24 24">
+      <path d="M4 6.5h16v11H4z"></path>
+      <path d="m4.5 7 7.5 6 7.5-6"></path>
+    </symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24">
+      <rect x="5" y="5" width="14" height="14" rx="4"></rect>
+      <circle cx="12" cy="12" r="3.2"></circle>
+      <circle cx="16.4" cy="7.8" r=".8"></circle>
+    </symbol>
+    <symbol id="icon-tiktok" viewBox="0 0 24 24">
+      <path d="M13.3 4v10.1a4.1 4.1 0 1 1-3.4-4"></path>
+      <path d="M13.3 4c.6 3.3 2.5 5.2 5.2 5.6"></path>
+    </symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24">
+      <path d="M5 5l14 14"></path>
+      <path d="M19 5 5 19"></path>
+    </symbol>
+    <symbol id="icon-facebook" viewBox="0 0 24 24">
+      <path d="M14.5 8H13c-.9 0-1.4.5-1.4 1.5V12h2.7l-.4 3h-2.3v5"></path>
+      <path d="M11.6 12H9.5v3h2.1"></path>
+    </symbol>
+  </svg>
+
+  <header class="site-header">
+    <a class="brand magnetic" href="#top" aria-label="Início">
+      <span>PEU</span>
+      <small>direção criativa</small>
+    </a>
+    <nav aria-label="Navegação principal">
+      <a href="#impacto">Impacto</a>
+      <a href="#radar">Cultura</a>
+      <a href="#lab">Ideias</a>
+      <a href="#cases">Cases</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <button class="brief-toggle magnetic" id="brief-toggle" type="button">Direção</button>
+  </header>
+
+  <aside class="live-brief" id="live-brief" aria-label="Painel de direção criativa">
+    <span>curadoria inicial</span>
+    <strong id="brief-title">Autoridade criativa</strong>
+    <p id="brief-copy">Narrativa de carreira, cultura pop, viralidade, marcas e escala.</p>
+  </aside>
+
+  <main id="top">
+    <section class="hero section" data-brief-title="Peu te conta" data-brief-copy="Tendência, criatividade e leitura de internet virando oportunidade real.">
+      <img class="hero-art" src="assets/hero-digital-culture.png" alt="Composição abstrata sobre cultura pop, estratégia e publicidade">
+      <div class="hero-overlay"></div>
+
+      <div class="floating-tags" aria-hidden="true">
+        <button type="button" style="--x: 7%; --y: 22%; --d: 0s;">pauta quente</button>
+        <button type="button" style="--x: 72%; --y: 18%; --d: .4s;">PEU TE CONTA</button>
+        <button type="button" style="--x: 64%; --y: 66%; --d: .8s;">+23M seguidores</button>
+        <button type="button" style="--x: 18%; --y: 78%; --d: 1.2s;">meme vira dinheiro</button>
+      </div>
+
+      <div class="hero-content reveal">
+        <p class="eyebrow">Hub criativo / memes / cultura pop / publicidade</p>
+        <h1>Tendência vira ideia. Ideia vira oportunidade.</h1>
+        <p class="hero-copy">
+          Peu lê a internet em tempo real e transforma repertório, timing e sensibilidade criativa em campanhas, produtos, comunidades e conversas de massa.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary magnetic" href="#cases">Explorar cases</a>
+          <a class="button ghost magnetic" href="#radar">Ver mapa criativo</a>
+        </div>
+        <div class="hero-manifesto" aria-label="Habilidades criativas">
+          <span>criatividade</span>
+          <span>estratégia</span>
+          <span>tendências</span>
+          <span>novos negócios</span>
+        </div>
+      </div>
+
+      <div class="signal-stack" aria-label="Simulação de sinais culturais">
+        <article class="signal-card is-hot">
+          <span>PEU TE CONTA</span>
+          <strong>Assunto quente</strong>
+          <p>Oportunidade nasce no timing</p>
+        </article>
+        <article class="signal-card">
+          <span>hub criativo</span>
+          <strong>meme → campanha</strong>
+          <p>Trend com estratégia e entrega</p>
+        </article>
+        <article class="signal-card">
+          <span>prova social</span>
+          <strong>comunidade move marca</strong>
+          <p>Ideia boa já nasce compartilhável</p>
+        </article>
+      </div>
+
+      <aside class="signal-panel tilt-card" aria-label="Resumo de impacto">
+        <span>internet há</span>
+        <strong>11 anos</strong>
+        <p>criando, lendo e aquecendo conversas</p>
+      </aside>
+    </section>
+
+    <section class="ticker" aria-label="Marcas e territórios citados">
+      <div>
+        <span>Globo</span>
+        <span>iFood</span>
+        <span>Spotify</span>
+        <span>Prime Video</span>
+        <span>Disney</span>
+        <span>Coca-Cola</span>
+        <span>Ambev</span>
+        <span>McDonald's</span>
+        <span>Mercado Livre</span>
+        <span>Burger King</span>
+        <span>Serasa</span>
+        <span>Claro</span>
+        <span>TIM</span>
+        <span>Itaú</span>
+        <span>Magazine Luiza</span>
+        <span>Ivete Sangalo</span>
+        <span>BYD</span>
+      </div>
+    </section>
+
+    <section class="section intro" id="impacto" data-brief-title="Provas de escala" data-brief-copy="Métricas, marcas e trajetória para sustentar autoridade criativa.">
+      <div class="section-kicker">Quem é Peu?</div>
+      <div class="intro-grid reveal">
+        <h2>Publicitário, criador de conteúdo e influenciador com feeling raro para transformar internet em mercado.</h2>
+        <p>
+          Publicitário, criador de conteúdo e influenciador, ele atua há 11 anos na internet combinando criatividade, estratégia, planejamento, inovação, tendências, networking e novos negócios.
+        </p>
+      </div>
+      <div class="metrics-grid">
+        <article class="metric-card tilt-card reveal">
+          <strong data-count="11">0</strong>
+          <span>anos criando na internet</span>
+        </article>
+        <article class="metric-card tilt-card reveal">
+          <strong data-count="98">0</strong>
+          <span>projetos conduzidos em média</span>
+        </article>
+        <article class="metric-card tilt-card reveal">
+          <strong data-count="40">0</strong>
+          <span>perfis gerenciados</span>
+        </article>
+        <article class="metric-card highlight tilt-card reveal">
+          <strong>11M → 23M</strong>
+          <span>crescimento citado no Alfinetei</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section hub-section" data-brief-title="Hub criativo" data-brief-copy="Arquitetura criativa, análise de tendências, inovação e novas oportunidades.">
+      <div class="hub-copy reveal">
+        <p class="eyebrow">Hub criativo</p>
+        <h2>As tendências mandam sinais. Peu traduz em oportunidade.</h2>
+        <p>
+          O hub conecta tendências, conteúdo, posicionamento e sensibilidade criativa para transformar cultura digital em ideias vendáveis, conversas públicas e produtos com circulação.
+        </p>
+      </div>
+      <div class="hub-grid reveal">
+        <article class="hub-card tilt-card">
+          <span>01</span>
+          <h3>Arquitetura criativa</h3>
+          <p>Sistema de criação para organizar conceito, narrativa, formato e entrega.</p>
+        </article>
+        <article class="hub-card tilt-card">
+          <span>02</span>
+          <h3>Análise de tendências</h3>
+          <p>Monitoramento em tempo real das conversas, comunidades e sinais culturais.</p>
+        </article>
+        <article class="hub-card tilt-card">
+          <span>03</span>
+          <h3>Novos negócios</h3>
+          <p>Ideias, lançamentos, monetização e inovação para marcas, empresas e influenciadores.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section radar-section" id="radar" data-brief-title="Mapa cultural" data-brief-copy="Interação para mostrar repertório, timing e leitura de tendências.">
+      <div class="radar-copy reveal">
+        <p class="eyebrow">Mapa cultural</p>
+        <h2>Escolha um território e veja como uma leitura vira entrega.</h2>
+        <p>Um recorte dos territórios em que Peu conecta timing, comunidade, marca e produto com linguagem de internet.</p>
+      </div>
+      <div class="radar-lab reveal">
+        <div class="radar-orbit" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <button class="radar-node is-active" type="button" data-radar="Viralidade|Leitura de timing, linguagem de plataforma e gatilhos de compartilhamento.">Viralidade</button>
+        <button class="radar-node" type="button" data-radar="Marcas|Campanhas e ativações com linguagem nativa de cultura pop.">Marcas</button>
+        <button class="radar-node" type="button" data-radar="Audiência|Gestão de comunidades, editoria e crescimento de perfis grandes.">Audiência</button>
+        <button class="radar-node" type="button" data-radar="Produtos|Consultoria, assinatura criativa e Banco de Mentes.">Produtos</button>
+        <article class="radar-card tilt-card" id="radar-card">
+          <strong>Viralidade</strong>
+          <p>Leitura de timing, linguagem de plataforma e gatilhos de compartilhamento.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section lab-section" id="lab" data-brief-title="Mesa de ideias" data-brief-copy="Um laboratório interativo para transformar pauta em conceito, formato e entrega.">
+      <div class="lab-copy reveal">
+        <p class="eyebrow">Mesa de ideias</p>
+        <h2>Escolha um território e veja a ideia ganhar forma.</h2>
+        <p>Um quadro de raciocínio criativo: contexto, virada, formato, entrega e prova de valor.</p>
+      </div>
+      <div class="lab-console reveal">
+        <div class="lab-tabs" aria-label="Territórios criativos">
+          <button class="lab-tab is-active" type="button" data-lab="reality">Reality</button>
+          <button class="lab-tab" type="button" data-lab="marca">Marca</button>
+          <button class="lab-tab" type="button" data-lab="evento">Evento</button>
+          <button class="lab-tab" type="button" data-lab="produto">Produto</button>
+        </div>
+        <article class="lab-output tilt-card" id="lab-output">
+          <span id="lab-label">sala de guerra</span>
+          <h3 id="lab-title">Cobertura em tempo real</h3>
+          <p id="lab-copy">Transformar acontecimentos de reality show em narrativa social com timing, humor e leitura de torcida.</p>
+          <ul id="lab-list">
+            <li>Monitorar conversa</li>
+            <li>Achar a virada emocional</li>
+            <li>Publicar antes da curva cair</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split" id="trajetoria" data-brief-title="Trajetória em cena" data-brief-copy="Da Deprê Universitária ao Banco de Mentes, com narrativa de virada.">
+      <div class="story-panel reveal">
+        <p class="eyebrow">Da reclamação ao negócio</p>
+        <h2>A internet virou palco, produto e carreira.</h2>
+        <p>
+          Uma trajetória que começa no humor universitário, passa por televisão, grandes perfis e marcas nacionais, e vira uma assinatura criativa focada em cultura pop.
+        </p>
+        <div class="story-proof">
+          <article>
+            <strong>400K</strong>
+            <span>em três meses na Deprê Universitária</span>
+          </article>
+          <article>
+            <strong>23M</strong>
+            <span>seguidores no Alfinetei durante a gestão</span>
+          </article>
+          <article>
+            <strong>Digital Awards</strong>
+            <span>Mente Criativa do Ano</span>
+          </article>
+        </div>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item is-active reveal">
+          <span>01</span>
+          <div>
+            <h3>Deprê Universitária</h3>
+            <p>Aos 17 anos, a frustração com o curso de Direito virou conteúdo. O perfil explodiu no Facebook e chegou a 400 mil seguidores em três meses.</p>
+          </div>
+        </article>
+        <article class="timeline-item reveal">
+          <span>02</span>
+          <div>
+            <h3>Teleton e virada de chave</h3>
+            <p>O convite para a bancada de influenciadores no SBT marcou a decisão de deixar Direito para seguir a criatividade digital.</p>
+          </div>
+        </article>
+        <article class="timeline-item reveal">
+          <span>03</span>
+          <div>
+            <h3>Alfinetei e grandes audiências</h3>
+            <p>Em cinco anos, ajudou a levar o perfil de 7/11 milhões para 23 milhões de seguidores, consolidando experiência em alcance e monetização.</p>
+          </div>
+        </article>
+        <article class="timeline-item reveal">
+          <span>04</span>
+          <div>
+            <h3>Marcas, produtos e Banco de Mentes</h3>
+            <p>Hoje lidera um ecossistema criativo com consultoria, assinatura de produtos e experiências para marcas e personalidades.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section cases" id="cases" data-brief-title="Arquivo de cases" data-brief-copy="Dossiês de atuação, audiência, marca e tempo real.">
+      <div class="section-title reveal">
+        <p class="eyebrow">Arquivo de cases</p>
+        <h2>Projetos, coberturas e movimentos que viraram conversa.</h2>
+      </div>
+      <div class="case-board">
+        <article class="case-card featured tilt-card reveal" data-case="alfinetei">
+          <div class="case-tag">case de crescimento</div>
+          <h3>Alfinetei</h3>
+          <p>Crescimento, narrativa, legenda, leitura de pauta e monetização em um dos maiores perfis de cultura pop do país.</p>
+          <dl>
+            <div><dt>Resultado citado</dt><dd>7/11M → 23M seguidores</dd></div>
+            <div><dt>Território</dt><dd>celebridades, realities e internet</dd></div>
+          </dl>
+          <button type="button">Abrir dossiê</button>
+        </article>
+        <article class="case-card tilt-card reveal" data-case="sou-eu">
+          <div class="case-tag">gestão de audiência</div>
+          <h3>Sou Eu na Vida</h3>
+          <p>Atuação como editor-chefe e criativo em perfil com 17 milhões de seguidores.</p>
+          <button type="button">Abrir dossiê</button>
+        </article>
+        <article class="case-card tilt-card reveal" data-case="banca">
+          <div class="case-tag">head de criação</div>
+          <h3>Banca Digital</h3>
+          <p>Head de criação e atendimento, com atuação conectando marcas, influenciadores e cultura digital.</p>
+          <button type="button">Abrir dossiê</button>
+        </article>
+        <article class="case-card tilt-card reveal" data-case="bbb">
+          <div class="case-tag">reality e torcida</div>
+          <h3>BBB</h3>
+          <p>Leitura de torcida, timing de publicação e narrativas sociais capazes de influenciar conversa em massa.</p>
+          <button type="button">Abrir dossiê</button>
+        </article>
+        <article class="case-card tilt-card reveal" data-case="byd">
+          <div class="case-tag">ativação de marca</div>
+          <h3>Carnaval da BYD</h3>
+          <p>Visão criativa aplicada em ações de marca, eventos, presença social e cultura pop.</p>
+          <button type="button">Abrir dossiê</button>
+        </article>
+        <article class="case-card tilt-card reveal" data-case="eventos">
+          <div class="case-tag">eventos e cultura pop</div>
+          <h3>Sapucaí, Farofa da Gkay e BBB</h3>
+          <p>Coberturas e narrativas orientadas por tempo real, repercussão e conversas de massa.</p>
+          <button type="button">Abrir dossiê</button>
+        </article>
+        <article class="case-card tilt-card reveal" data-case="mynd">
+          <div class="case-tag">direção criativa</div>
+          <h3>Mynd & Billboard</h3>
+          <p>Experiência como diretor de criação e líder de tendências no mercado digital e de entretenimento.</p>
+          <button type="button">Abrir dossiê</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section presence-section" data-brief-title="Presença cultural" data-brief-copy="Eventos, palestras, marcas e imprensa como prova de repertório.">
+      <div class="presence-head reveal">
+        <p class="eyebrow">Presença cultural</p>
+        <h2>Eventos, palcos e marcas onde o repertório encontrou audiência.</h2>
+      </div>
+      <div class="presence-grid">
+        <article class="presence-card tilt-card reveal">
+          <span>coberturas</span>
+          <h3>Eventos e cultura pop</h3>
+          <p>Farofa da Gkay, Sapucaí, Rock in Rio, São João da Thay, Tomorrowland, Numanice e Ensaios da Anitta.</p>
+        </article>
+        <article class="presence-card tilt-card reveal">
+          <span>palestras</span>
+          <h3>Redes sociais como carreira</h3>
+          <p>Participações em Unimontes, UpFront Mynd e Teleton falando sobre memes, mercado e influência digital.</p>
+        </article>
+        <article class="presence-card tilt-card reveal">
+          <span>marcas</span>
+          <h3>Memes dentro da publicidade</h3>
+          <p>Trabalhos e inserções com Mercado Livre, iFood, Globo, McDonald's, Burger King, Disney, Spotify, Itaú, Ambev e Coca-Cola.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section services" data-brief-title="Caminhos de atuação" data-brief-copy="Transformar trajetória em ofertas claras para marcas, artistas e negócios.">
+      <div class="service-head reveal">
+        <p class="eyebrow">Territórios de atuação</p>
+        <h2>Caminhos de atuação para marcas, artistas e produtos.</h2>
+      </div>
+      <div class="service-grid">
+        <article class="tilt-card reveal">
+          <span>01</span>
+          <h3>Estratégia criativa</h3>
+          <p>Conceitos, campanhas, posicionamento e ideias com potencial de conversa pública.</p>
+        </article>
+        <article class="tilt-card reveal">
+          <span>02</span>
+          <h3>Conteúdo viral</h3>
+          <p>Leitura de tendências, timing, linguagem de plataforma e formatos compartilháveis.</p>
+        </article>
+        <article class="tilt-card reveal">
+          <span>03</span>
+          <h3>Gestão de audiência</h3>
+          <p>Operação de perfis grandes, calendário, editoria, engajamento e crescimento.</p>
+        </article>
+        <article class="tilt-card reveal">
+          <span>04</span>
+          <h3>Produtos e consultoria</h3>
+          <p>Banco de Mentes, mentorias, direcionamento criativo e transferência de repertório para marcas.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section quote-section" data-brief-title="Frase de autoridade" data-brief-copy="Um respiro editorial com fala forte da matéria.">
+      <blockquote class="reveal">
+        <p>"Meu diferencial é criatividade estratégica, cultura digital, raciocínio rápido e habilidade de identificar tendências em tempo real."</p>
+        <cite>Peu, em entrevista ao portal LeoDias</cite>
+      </blockquote>
+    </section>
+
+    <section class="section contact" id="contato" data-brief-title="Vamos produzir juntos" data-brief-copy="Contato profissional, redes e comunidades que mantêm o repertório em movimento.">
+      <div class="contact-copy reveal">
+        <p class="eyebrow">Agora é com Peu</p>
+        <h2>Vamos produzir conteúdo relevante juntos?</h2>
+        <p>
+          Para convites, campanhas, palestras, coberturas e projetos criativos, estes são os caminhos diretos para chegar no universo dele.
+        </p>
+      </div>
+      <div class="next-card tilt-card reveal">
+        <div class="contact-stamp" aria-hidden="true">PEU TE CONTA</div>
+        <div class="contact-direct">
+          <a class="contact-cta is-instagram magnetic" href="https://www.instagram.com/peusaantos/" target="_blank" rel="noreferrer">
+            <svg class="contact-icon" aria-hidden="true"><use href="#icon-instagram"></use></svg>
+            <span>Instagram pessoal</span>
+            <strong>@peusaantos</strong>
+          </a>
+          <a class="contact-cta magnetic" href="mailto:peu.santos@mynd8.com.br">
+            <svg class="contact-icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
+            <span>Email profissional</span>
+            <strong>peu.santos@mynd8.com.br</strong>
+          </a>
+        </div>
+        <div class="contact-links" aria-label="Redes oficiais">
+          <a class="social-card magnetic" href="https://www.instagram.com/depreuniversitaria/" target="_blank" rel="noreferrer">
+            <svg class="contact-icon" aria-hidden="true"><use href="#icon-instagram"></use></svg>
+            <span>Comunidade</span>
+            <strong>Deprê</strong>
+            <p>Universitária, humor e cultura de internet.</p>
+          </a>
+          <a class="social-card magnetic" href="https://www.tiktok.com/@depreuniversitaria" target="_blank" rel="noreferrer">
+            <svg class="contact-icon" aria-hidden="true"><use href="#icon-tiktok"></use></svg>
+            <span>Vídeo curto</span>
+            <strong>TikTok</strong>
+            <p>Formatos rápidos e linguagem de plataforma.</p>
+          </a>
+          <a class="social-card magnetic" href="https://x.com/universitariaof" target="_blank" rel="noreferrer">
+            <svg class="contact-icon" aria-hidden="true"><use href="#icon-x"></use></svg>
+            <span>Tempo real</span>
+            <strong>X / Twitter</strong>
+            <p>Pulso de assunto quente e conversa pública.</p>
+          </a>
+          <a class="social-card magnetic" href="https://www.facebook.com/depressaouniversitariaa/?locale=pt_BR" target="_blank" rel="noreferrer">
+            <svg class="contact-icon" aria-hidden="true"><use href="#icon-facebook"></use></svg>
+            <span>Arquivo social</span>
+            <strong>Facebook</strong>
+            <p>Base histórica da Deprê Universitária.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      <span>Desenvolvido por</span>
+      <a href="https://wendell-ramos.github.io/portfolio-wendell-ramos/" target="_blank" rel="noreferrer">Wendell Ramos</a>
+    </p>
+  </footer>
+
+  <dialog class="case-modal" id="case-modal">
+    <button class="modal-close" id="modal-close" type="button" aria-label="Fechar">×</button>
+    <div class="modal-grid">
+      <div class="modal-hero">
+        <span class="modal-stamp">dossiê criativo</span>
+        <p class="eyebrow" id="modal-tag">case</p>
+        <h2 id="modal-title">Case</h2>
+      </div>
+      <div class="modal-body">
+        <span class="modal-label">leitura do case</span>
+        <p id="modal-copy"></p>
+        <span class="modal-label">pontos de prova</span>
+        <ul id="modal-points"></ul>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="script.js?v=lab-polish-1"></script>
+</body>
+</html>
