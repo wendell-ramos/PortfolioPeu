@@ -2797,3 +2797,118 @@ body {
     overflow-wrap: anywhere;
   }
 }
+
+/* Direcao criativa: mini ficha de curadoria para desktop. */
+.brief-toggle {
+  min-height: 42px;
+  padding: 0 10px 0 14px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--yellow);
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 5px 5px 0 rgba(255, 79, 163, 0.78);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0;
+}
+
+.brief-toggle i {
+  width: 25px;
+  height: 25px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-style: normal;
+  font-family: Archivo, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1;
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.brief-toggle:hover,
+.brief-toggle[aria-expanded="true"] {
+  background: var(--cyan);
+}
+
+.brief-toggle[aria-expanded="true"] i {
+  transform: rotate(180deg);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.live-brief {
+  right: clamp(18px, 4vw, 58px);
+  top: 86px;
+  width: min(360px, calc(100vw - 36px));
+  padding: 18px 18px 20px;
+  border: 3px solid var(--ink);
+  border-radius: 4px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 10px 10px 0 var(--cyan);
+  backdrop-filter: none;
+  transform: translateY(-10px) rotate(1deg) scale(0.96);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 220ms ease, opacity 180ms ease;
+}
+
+.live-brief::before {
+  content: "PEU TE CONTA";
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 7px 9px;
+  background: var(--yellow);
+  color: var(--ink);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 rgba(17, 16, 13, 0.82);
+  transform: rotate(-2deg);
+}
+
+.live-brief.is-open {
+  transform: translateY(0) rotate(1deg) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.live-brief span {
+  display: block;
+  color: var(--cyan);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.live-brief strong {
+  display: block;
+  margin-top: 8px;
+  color: var(--ink);
+  font-family: Archivo, sans-serif;
+  font-size: 1.55rem;
+  line-height: 0.95;
+}
+
+.live-brief p {
+  margin: 10px 0 0;
+  color: rgba(17, 16, 13, 0.72);
+  font-size: 0.94rem;
+  line-height: 1.38;
+}
+
+@media (max-width: 1180px) and (min-width: 981px) {
+  .brief-toggle span {
+    display: none;
+  }
+
+  .brief-toggle {
+    padding-inline: 9px;
+  }
+}

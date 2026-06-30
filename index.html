@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=lab-polish-1">
+  <link rel="stylesheet" href="styles.css?v=brief-polish-1">
 </head>
 <body>
   <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
@@ -51,11 +51,14 @@
       <a href="#cases">Cases</a>
       <a href="#contato">Contato</a>
     </nav>
-    <button class="brief-toggle magnetic" id="brief-toggle" type="button">Direção</button>
+    <button class="brief-toggle magnetic" id="brief-toggle" type="button" aria-expanded="false" aria-controls="live-brief">
+      <span>Direção criativa</span>
+      <i aria-hidden="true">↘</i>
+    </button>
   </header>
 
   <aside class="live-brief" id="live-brief" aria-label="Painel de direção criativa">
-    <span>curadoria inicial</span>
+    <span>nota de direção</span>
     <strong id="brief-title">Autoridade criativa</strong>
     <p id="brief-copy">Narrativa de carreira, cultura pop, viralidade, marcas e escala.</p>
   </aside>
@@ -484,6 +487,6 @@
     </div>
   </dialog>
 
-  <script src="script.js?v=lab-polish-1"></script>
+  <script src="script.js?v=brief-polish-1"></script>
 </body>
 </html>

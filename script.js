@@ -153,7 +153,14 @@ const briefObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll("[data-brief-title]").forEach((section) => briefObserver.observe(section));
 
 briefToggle?.addEventListener("click", () => {
-  briefPanel.classList.toggle("is-open");
+  const isOpen = briefPanel.classList.toggle("is-open");
+  briefToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape" || !briefPanel?.classList.contains("is-open")) return;
+  briefPanel.classList.remove("is-open");
+  briefToggle?.setAttribute("aria-expanded", "false");
 });
 
 timelineItems.forEach((item) => {
