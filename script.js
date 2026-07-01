@@ -3,10 +3,6 @@ const timelineItems = document.querySelectorAll(".timeline-item");
 const tickerTrack = document.querySelector(".ticker div");
 const scrollProgress = document.querySelector("#scroll-progress");
 const cursorLight = document.querySelector("#cursor-light");
-const briefPanel = document.querySelector("#live-brief");
-const briefToggle = document.querySelector("#brief-toggle");
-const briefTitle = document.querySelector("#brief-title");
-const briefCopy = document.querySelector("#brief-copy");
 const radarCard = document.querySelector("#radar-card");
 const modal = document.querySelector("#case-modal");
 const modalClose = document.querySelector("#modal-close");
@@ -142,29 +138,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.22 });
 
 document.querySelectorAll(".reveal, [data-count]").forEach((element) => revealObserver.observe(element));
-
-const briefObserver = new IntersectionObserver((entries) => {
-  const visible = entries
-    .filter((entry) => entry.isIntersecting)
-    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-  if (!visible) return;
-  briefTitle.textContent = visible.target.dataset.briefTitle;
-  briefCopy.textContent = visible.target.dataset.briefCopy;
-}, { threshold: 0.42 });
-
-document.querySelectorAll("[data-brief-title]").forEach((section) => briefObserver.observe(section));
-
-briefToggle?.addEventListener("click", () => {
-  const isOpen = briefPanel.classList.toggle("is-open");
-  briefToggle.setAttribute("aria-expanded", String(isOpen));
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key !== "Escape" || !briefPanel?.classList.contains("is-open")) return;
-  briefPanel.classList.remove("is-open");
-  briefToggle?.setAttribute("aria-expanded", "false");
-});
 
 timelineItems.forEach((item) => {
   item.addEventListener("click", () => {
