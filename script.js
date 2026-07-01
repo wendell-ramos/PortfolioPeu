@@ -14,6 +14,9 @@ const modalTag = document.querySelector("#modal-tag");
 const modalTitle = document.querySelector("#modal-title");
 const modalCopy = document.querySelector("#modal-copy");
 const modalPoints = document.querySelector("#modal-points");
+const caseBoard = document.querySelector(".case-board");
+const caseScrollbar = document.querySelector(".case-scrollbar");
+const caseScrollbarThumb = document.querySelector(".case-scrollbar-thumb");
 
 const cases = {
   alfinetei: {
@@ -216,6 +219,58 @@ document.querySelectorAll("[data-case]").forEach((card) => {
       .join("");
     modal.showModal();
   });
+});
+
+const updateCaseScrollbar = () => {
+  if (!caseBoard || !caseScrollbar || !caseScrollbarThumb) return;
+
+  const maxScroll = caseBoard.scrollWidth - caseBoard.clientWidth;
+  const trackWidth = caseScrollbar.clientWidth - 10;
+  const thumbWidth = caseScrollbarThumb.offsetWidth || 64;
+  const progress = maxScroll > 0 ? caseBoard.scrollLeft / maxScroll : 0;
+  const thumbLeft = Math.round(progress * Math.max(trackWidth - thumbWidth, 0));
+
+  caseScrollbar.style.setProperty("--case-thumb-left", `${thumbLeft}px`);
+  caseScrollbarThumb.style.transform = `translateX(${thumbLeft}px)`;
+  caseScrollbar.hidden = maxScroll <= 2;
+};
+
+const moveCaseBoardFromTrack = (clientX) => {
+  if (!caseBoard || !caseScrollbar) return;
+
+  const rect = caseScrollbar.getBoundingClientRect();
+  const maxScroll = caseBoard.scrollWidth - caseBoard.clientWidth;
+  const ratio = Math.min(Math.max((clientX - rect.left) / rect.width, 0), 1);
+  caseBoard.scrollTo({ left: ratio * maxScroll, behavior: "smooth" });
+};
+
+caseBoard?.addEventListener("scroll", updateCaseScrollbar, { passive: true });
+window.addEventListener("resize", updateCaseScrollbar);
+window.addEventListener("load", updateCaseScrollbar);
+requestAnimationFrame(updateCaseScrollbar);
+
+caseScrollbar?.addEventListener("click", (event) => {
+  moveCaseBoardFromTrack(event.clientX);
+});
+
+caseScrollbarThumb?.addEventListener("pointerdown", (event) => {
+  event.preventDefault();
+  caseScrollbarThumb.setPointerCapture(event.pointerId);
+  caseScrollbarThumb.dataset.dragging = "true";
+});
+
+caseScrollbarThumb?.addEventListener("pointermove", (event) => {
+  if (caseScrollbarThumb.dataset.dragging !== "true") return;
+  moveCaseBoardFromTrack(event.clientX);
+});
+
+caseScrollbarThumb?.addEventListener("pointerup", (event) => {
+  caseScrollbarThumb.releasePointerCapture(event.pointerId);
+  delete caseScrollbarThumb.dataset.dragging;
+});
+
+caseScrollbarThumb?.addEventListener("pointercancel", () => {
+  delete caseScrollbarThumb.dataset.dragging;
 });
 
 modalClose?.addEventListener("click", () => modal.close());
